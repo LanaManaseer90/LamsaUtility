@@ -3,7 +3,7 @@ import java.io.Serializable;
 
 public class Song implements Serializable{
 
-    public static long version = 1L;
+	private static final long serialVersionUID = 1L;
 
     private String songName;
     private String singerName;
