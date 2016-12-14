@@ -3,12 +3,6 @@ import java.io.Serializable;
 
 public class Song implements Serializable{
 
-<<<<<<< HEAD
-    /**
-	 * 
-	 */
-=======
->>>>>>> 9d16e6f29224bc7cdb4846bb3b4efbed7e690cc4
 	private static final long serialVersionUID = 1L;
 
     private String songName;
