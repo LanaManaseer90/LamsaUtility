@@ -23,7 +23,7 @@ public class TestMain {
 //        int world = manipulator.saveObject(worldHoldOn);
 
 
-        File f = new File("/Users/Shoshaa/Desktop/Java1.txt");
+        File f = new File("/Users/Lana_Manaseer/Desktop/Java1.txt");
 
         ObjectManipulator objectManipulator = new ObjectManipulator(f);
 
