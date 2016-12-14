@@ -53,6 +53,8 @@ public class ObjectManipulator implements Iterable {
         //get a uniquely generated key for an object.
         int generatedKey = object.hashCode();
 
+        if(!isSerializable(object)) return -1;
+
         if (file != null) {
             if (file.exists()) {//if file exist load it to the hashMap and put new Objects
                 try {
@@ -89,14 +91,23 @@ public class ObjectManipulator implements Iterable {
      * @return Object if found
      */
     public Object findObject(int key) {
-    	if (file != null)mHashMap = mFileManager.getMapFromFile(file);
+        if (file != null) mHashMap = mFileManager.getMapFromFile(file);
         return mHashMap.get(key);
+    }
+
+    /**
+     * check if the object is serializable or not
+     * @param o object to check
+     * @return true is the object is serializable, false otherwise.
+     */
+    private boolean isSerializable(Object o){
+        return (o instanceof Serializable);
     }
 
     @Override
     public Iterator iterator() {
-    	if (file != null)mHashMap = mFileManager.getMapFromFile(file);
-    	return mHashMap.keySet().iterator();
+        mHashMap = mFileManager.getMapFromFile(file);
+        return mHashMap.keySet().iterator();
     }
 
 
